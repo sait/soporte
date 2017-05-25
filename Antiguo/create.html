@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Soporte SAIT</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/styles.css">
+    <script src="js/jquery-3.2.1.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/obtenerDatos.js"></script>
+  </head>
+  <body>
+
+    <div class="container container-fluid col-xs-12 col-md-12 text-center" id="encabezado">
+      <img src="img/logo-transparante-4.png" style="width: 200px; height: auto;">
+      <img src="img/F123logo.png" style="width: 260px; height: auto;">
+      <br>
+      <div class="container col-xs-1 col-sm-4 col-md-6">
+        <p class="text-left"><a class="btn" href="index.html" style="color: black;"><span class="glyphicon glyphicon-home"></span> INICIO</a></p>
+      </div>
+      <div class="container col-xs-11 col-sm-8 col-md-6">
+        <p class="text-right">Usuario Invitado | <a class="btn btn-default botones" href="login.html"><span class="glyphicon glyphicon-log-in"></span> Iniciar Sesión</a> | <a class="btn btn-info botones" href="create.html"><span class="glyphicon glyphicon-user"></span> Registrarse</a></p>
+      </div>
+    </div>
+
+    <div class="container contenido">
+      <div class="row">
+        <div class="col-xs-12 col-md-12">
+          <h2>Registro de cuenta</h2>
+          <p>Use los formularios más abajo para crear o actualizar la información que tenemos en los archivos de su cuenta.</p>
+          <form class="form-horizontal" id="formCreate">
+            <hr>
+            <h3>Información de Contacto</h3>
+            <div class="form-group">
+              <label class="control-label col-sm-2" for="txtEmail">Correo Electrónico:</label>
+              <div class="col-sm-10">
+                <input type="email" class="form-control" id="txtEmail" placeholder="someone@example.com">
+              </div>
+            </div>
+            <div class="form-group">
+              <label class="control-label col-sm-2" for="txtNombre">Nombre Completo:</label>
+              <div class="col-sm-10">
+                <input type="text" class="form-control" id="txtNombre" placeholder="Juan Pérez">
+              </div>
+            </div>
+            <div class="form-group">
+              <label class="control-label col-sm-2" for="txtTelefono">Número Teléfono:</label>
+              <div class="col-sm-10">
+                <input type="text" class="form-control" id="txtTelefono" placeholder="(653)-123-4567">
+              </div>
+            </div>
+            <div class="form-group">
+              <label class="control-label col-sm-2" for="txtExt">EXT:</label>
+              <div class="col-sm-10">
+                <input type="text" class="form-control" id="txtExt" placeholder="EXT">
+              </div>
+            </div>
+
+            <hr>
+            <h3>Preferencias</h3>
+            <p></p>
+            <div class="form-group">
+              <label class="control-label col-sm-2" for="txtZona">Zona Horaria:</label>
+              <div class="col-sm-10">
+                <select class="form-control" id="txtZona">
+                  <option value="1" >GMT -12.0 - Eniwetok, Kwajalein</option>
+                  <option value="2" >GMT -11.0 - Midway Island, Samoa</option>
+                  <option value="3" >GMT -10.0 - Hawaii</option>
+                  <option value="4" >GMT -9.0 - Alaska</option>
+                  <option value="5" >GMT -8.0 - Pacific Time (US &amp; Canada)</option>
+                  <option value="6" selected="selected">GMT -7.0 - Mountain Time (US &amp; Canada)</option>
+                  <option value="7" >GMT -6.0 - Central Time (US &amp; Canada), Mexico City</option>
+                  <option value="8" >GMT -5.0 - Eastern Time (US &amp; Canada), Bogota, Lima</option>
+                  <option value="9" >GMT -4.0 - Atlantic Time (Canada), Caracas, La Paz</option>
+                  <option value="10" >GMT -3.5 - Newfoundland</option>
+                  <option value="11" >GMT -3.0 - Brazil, Buenos Aires, Georgetown</option>
+                  <option value="12" >GMT -2.0 - Mid-Atlantic</option>
+                  <option value="13" >GMT -1.0 - Azores, Cape Verde Islands</option>
+                  <option value="14" >GMT 0.0 - Western Europe Time, London, Lisbon, Casablanca</option>
+                  <option value="15" >GMT 1.0 - Brussels, Copenhagen, Madrid, Paris</option>
+                  <option value="16" >GMT 2.0 - Kaliningrad, South Africa</option>
+                  <option value="17" >GMT 3.0 - Baghdad, Riyadh, Moscow, St. Petersburg</option>
+                  <option value="18" >GMT 3.5 - Tehran</option>
+                  <option value="19" >GMT 4.0 - Abu Dhabi, Muscat, Baku, Tbilisi</option>
+                  <option value="20" >GMT 4.5 - Kabul</option>
+                  <option value="21" >GMT 5.0 - Ekaterinburg, Islamabad, Karachi, Tashkent</option>
+                  <option value="22" >GMT 5.5 - Bombay, Calcutta, Madras, New Delhi</option>
+                  <option value="23" >GMT 6.0 - Almaty, Dhaka, Colombo</option>
+                  <option value="24" >GMT 7.0 - Bangkok, Hanoi, Jakarta</option>
+                  <option value="25" >GMT 8.0 - Beijing, Perth, Singapore, Hong Kong</option>
+                  <option value="26" >GMT 9.0 - Tokyo, Seoul, Osaka, Sapporo, Yakutsk</option>
+                  <option value="27" >GMT 9.5 - Adelaide, Darwin</option>
+                  <option value="28" >GMT 10.0 - Eastern Australia, Guam, Vladivostok</option>
+                  <option value="29" >GMT 11.0 - Magadan, Solomon Islands, New Caledonia</option>
+                  <option value="30" >GMT 12.0 - Auckland, Wellington, Fiji, Kamchatka</option>
+                </select>
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="txtVerano" class="control-label col-sm-2">Horario de Verano:</label>
+              <div class="col-sm-10">
+                <label for="txtVerano" class="checkbox-inline">
+                  <input type="checkbox" value="" id="txtVerano">Observar el ahorro de luz diurna
+                </label>
+              </div>
+            </div>
+
+            <hr>
+            <h3>Credenciales de acceso</h3>
+            <div class="form-group">
+              <label for="txtPass1" class="col-sm-2">Crear una contraseña:</label>
+              <div class="col-sm-10">
+                <input type="password" class="form-control" id="txtPass1" placeholder="*********">
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="txtPass2" class="col-sm-2">Confirmar nueva contraseña:</label>
+              <div class="col-sm-10">
+                <input type="password" class="form-control" id="txtPass2" placeholder="*********">
+              </div>
+            </div>
+
+            <hr>
+            <div class="col-xs-12 col-sm-12 col-md-12 text-center">
+              <button type="submit" class="btn btn-primary"><span class="glyphicon glyphicon-floppy-disk"></span> Registrar</button>
+              <a class="btn btn-danger" href="index.html"><span class="glyphicon glyphicon-remove"></span> Cancelar</a>
+            </div>
+
+
+            <br><br>
+          </form>
+          </div>
+
+
+          <br><br>
+        </div>
+      </div>
+
+    <div class="container col-xs-12 col-sm-12 col-md-12 text-center">
+      <br>
+      <p>Copyright © 2017 SAIT Soporte - All rights reserved.</p>
+    </div>
+
+
+  </body>
+</html>

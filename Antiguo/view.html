@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Soporte SAIT</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/styles.css">
+    <script src="js/jquery-3.2.1.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/obtenerDatos.js"></script>
+  </head>
+  <body>
+
+    <div class="container container-fluid col-xs-12 col-md-12 text-center" id="encabezado">
+      <img src="img/logo-transparante-4.png" style="width: 200px; height: auto;">
+      <img src="img/F123logo.png" style="width: 260px; height: auto;">
+      <br>
+      <div class="container col-xs-1 col-sm-4 col-md-6">
+        <p class="text-left"><a class="btn" href="index.html" style="color: black;"><span class="glyphicon glyphicon-home"></span> INICIO</a></p>
+      </div>
+      <div class="container col-xs-11 col-sm-8 col-md-6">
+        <p class="text-right">Usuario Invitado | <a class="btn btn-default botones" href="login.html"><span class="glyphicon glyphicon-log-in"></span> Iniciar Sesión</a> | <a class="btn btn-info botones" href="create.html"><span class="glyphicon glyphicon-user"></span> Registrarse</a></p>
+      </div>
+    </div>
+
+    <div class="container contenido">
+      <div class="row">
+        <div class="col-xs-12 col-md-12">
+          <h2>Ver Estado de un Ticket</h2>
+          <p>Por favor proporcione su dirección de e-mail y el número de ticket. Este le registrará para ver su Ticket.</p>
+          <br><br>
+        </div>
+        <div class="col-xs-12 col-sm-12 col-md-6">
+          <form id="formView">
+            <div class="form-group">
+              <label for="txtEmail">Correo:</label>
+              <input type="email" class="form-control" id="txtEmail" placeholder="someone@example.com">
+            </div>
+            <div class="form-group">
+              <label for="txtTicket">Ticket:</label>
+              <input type="text" class="form-control" id="txtTicket" placeholder="012345">
+            </div>
+            <button type="submit" class="btn btn-primary"><span class="glyphicon glyphicon-eye-open"></span> Ver Ticket</button>
+            <a class="btn btn-danger" href="index.html"><span class="glyphicon glyphicon-remove"></span> Cancelar</a>
+          </form>
+        </div>
+        <div class="col-xs-8 col-sm-8 col-md-4">
+          <br>
+          <p>¿Tiene una cuenta con nosotros? <a href="login.html">Inicia Sesión</a> o <a href="create.html">regístrese</a> para una cuenta de para acceder a todos sus Tickets.</p>
+        </div>
+        <div class="col-xs-4 col-sm-4 col-md-2">
+          <img src="img/lock-security.png" id="imgDocumentos">
+        </div>
+      </div>
+      <br><br>
+      <p>Si es la primera vez que se pone en contacto con nosotros o perdio el número de Ticket, por favor <a href="open.html">abra un nuevo Ticket</a></p>
+      <br><br>
+    </div>
+
+    <div class="container col-xs-12 col-sm-12 col-md-12 text-center">
+      <br>
+      <p>Copyright © 2017 SAIT Soporte - All rights reserved.</p>
+    </div>
+
+
+  </body>
+</html>

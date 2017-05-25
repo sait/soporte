@@ -1,0 +1,29 @@
+#encabezado{
+    background-image: url("../img/white-background.jpg");
+    background-position:  center top;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    box-shadow: 0px 0px 3px #404040;
+    text-shadow: 0px 0px 15px white;
+}
+#instrucciones{
+    font-size: small;
+}
+.imgDocumentos{
+    width: 100px;
+    height: auto;
+}
+.contenido{
+    background-color: white;
+    box-shadow: 0px 0px 10px black;
+}
+#imgDocumentos{
+    width: 100px;
+    height: auto;
+}
+body{
+    background-color: #f9f9f9;
+}
+.botones{
+    box-shadow: 0px 0px 10px #bebebe;
+}
