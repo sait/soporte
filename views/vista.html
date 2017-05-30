@@ -1,0 +1,28 @@
+
+    <div class="col-xs-12 col-md-12">
+        <h2>Ver Estado de un Ticket</h2>
+        <p>Por favor proporcione su dirección de e-mail y el número de ticket. Este le registrará para ver su Ticket.</p>
+        <br><br>
+    </div>
+    <div class="col-xs-12 col-sm-12 col-md-6">
+        <form id="formView">
+            <div class="form-group">
+                <label for="txtEmail">Correo:</label>
+                <input type="email" class="form-control" id="txtEmail" placeholder="someone@example.com">
+            </div>
+            <div class="form-group">
+                <label for="txtTicket">Ticket:</label>
+                <input type="text" class="form-control" id="txtTicket" placeholder="012345">
+            </div>
+            <button type="submit" class="btn btn-primary"><span class="glyphicon glyphicon-eye-open"></span> Ver Ticket</button>
+            <a class="btn btn-danger" href="#"><span class="glyphicon glyphicon-remove"></span> Cancelar</a>
+        </form>
+    </div>
+    <div class="col-xs-8 col-sm-8 col-md-4">
+        <br>
+        <p>¿Tiene una cuenta con nosotros? <a href="#">Inicia Sesión</a> o <a href="#create">regístrese</a> para una cuenta de para acceder a todos sus Tickets.</p>
+    </div>
+    <div class="col-xs-4 col-sm-4 col-md-2">
+        <img src="img/lock-security.png" id="imgDocumentos">
+    </div>
+    <script src="backbone.marionette/obtenerDatos.js"></script>

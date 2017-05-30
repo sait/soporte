@@ -1,0 +1,104 @@
+
+    <div class="col-xs-12 col-md-12">
+        <h2>Abrir un nuevo Ticket</h2>
+        <p>Favor de completar el siguiente formulario para crear un nuevo ticket.</p>
+        <form class="form-horizontal" id="FormOpen">
+            <div class="form-group">
+                <label class="control-label col-sm-2" for="txtTema">Temas de ayuda:</label>
+                <div class="col-sm-10">
+                    <select class="form-control" id="txtTema">
+                        <option>--Seleccionar un Tema de Ayuda--</option>
+                        <option>Desarrollo / Sugerir Mejora</option>
+                        <option>Otro Asunto</option>
+                        <option>Soporte</option>
+                        <option>Soporte / Solicitar Ayuda</option>
+                        <option>Ventas</option>
+                        <option>Ventas / Cotización</option>
+                        <option>Ventas / Licencias</option>
+                    </select>
+                </div>
+                <br>
+            </div>
+
+            <div class="form-group">
+                <label class="control-label col-sm-2" for="txtProducto">Producto:</label>
+                <div class="col-sm-10">
+                    <select class="form-control" id="txtProducto">
+                        <option>--Seleccione Producto--</option>
+                        <option>SAIT Básico</option>
+                        <option>SAIT ERP</option>
+                        <option>SAIT Contabilidad</option>
+                        <option>SAIT Nómina</option>
+                        <option>SAIT Móvil</option>
+                        <option>Boveda (OCF)</option>
+                        <option>Factura 123</option>
+                        <option>Enlace de Sucursales</option>
+                    </select>
+                </div>
+            </div>
+
+            <hr>
+
+            <h3>Información de Contacto</h3>
+            <div class="form-group">
+                <label class="control-label col-sm-2" for="txtEmail">Correo Electrónico:</label>
+                <div class="col-sm-10">
+                    <input type="email" class="form-control" id="txtEmail" placeholder="someone@example.com">
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="control-label col-sm-2" for="txtNombre">Nombre Completo:</label>
+                <div class="col-sm-10">
+                    <input type="text" class="form-control" id="txtNombre" placeholder="Juan Pérez">
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="control-label col-sm-2" for="txtTelefono">Número Teléfono:</label>
+                <div class="col-sm-10">
+                    <input type="text" class="form-control" id="txtTelefono" placeholder="(653)-123-4567">
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="control-label col-sm-2" for="txtExt">EXT:</label>
+                <div class="col-sm-10">
+                    <input type="text" class="form-control" id="txtExt" placeholder="EXT">
+                </div>
+            </div>
+
+            <hr>
+            <h3>Detalle orden de servicio</h3>
+            <em>*IMPORTANTE* un buen detalle del problema incluye: 1) Pasos que debemos hacer, para nosotros poder reproducir el problema. 2) Mensaje de error, por escrito. Ayúdanos para ayudarte mejor. GRACIAS</em>
+            <p></p>
+            <div class="form-group">
+                <label class="control-label col-sm-1" for="txtTitulo">Titulo:</label>
+                <div class="col-sm-11">
+                    <input type="text" class="form-control" id="txtTitulo" placeholder="ej. Problemas de Faturación">
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="control-label col-sm-1" for="txtDetalle">Detalle:</label>
+                <div class="col-sm-11">
+                </div>
+                <div class="col-sm-12">
+                    <textarea class="form-control" rows="10" id="txtDetalle" placeholder="Describa detalladamente el problema o la duda..."></textarea>
+                </div>
+            </div>
+
+            <hr>
+            <strong>Nota:</strong>
+            <p>¿ Necesita anexar algunos archivos ?</p>
+            <p>Para imágenes puede usar <a href="https://justpaste.it/" target="_blank">JustPaste.it</a></p>
+            <p>Cualquier otro tipo de archivos puede usar: <a href="http://www.filenurse.com/" target="_blank">filenurse.com</a> o <a href="https://www.dropbox.com/" target="_blank">dropbox.com</a></p>
+            <p>En ambos casos, compartir URL generado en la descripción del problema.</p>
+            <hr>
+            <div class="col-xs-12 col-sm-12 col-md-12 text-center">
+                <button type="submit" class="btn btn-primary"><span class="glyphicon glyphicon-plus"></span> Crear ticket</button>
+                <button type="reset" class="btn btn-warning"><span class="glyphicon glyphicon-refresh"></span> Restablecer</button>
+                <a class="btn btn-danger" href="#"><span class="glyphicon glyphicon-remove"></span> Cancelar</a>
+            </div>
+
+
+
+        </form>
+    </div>
+    <script src="backbone.marionette/obtenerDatos.js"></script>
