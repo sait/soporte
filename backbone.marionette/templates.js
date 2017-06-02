@@ -3,7 +3,7 @@ App.Views.Index = Mn.View.extend({
 
     htmlFile: 'views/index.html',
 
-    el: $("#views"),
+    el: "#views",
 
     initialize: function () {
     },
@@ -17,7 +17,7 @@ App.Views.Index = Mn.View.extend({
 App.Views.Login = Mn.View.extend({
     htmlFile: 'views/login.html',
 
-    el: $("#views"),
+    el: "#views",
 
     initialize: function () {
     },
@@ -31,7 +31,7 @@ App.Views.Login = Mn.View.extend({
 App.Views.Create = Mn.View.extend({
     htmlFile: 'views/create.html',
 
-    el: $("#views"),
+    el: "#views",
 
     initialize: function () {
 
@@ -46,7 +46,7 @@ App.Views.Create = Mn.View.extend({
 App.Views.LoginAgente = Mn.View.extend({
     htmlFile: 'views/loginAgente.html',
 
-    el: $("#views"),
+    el: "#views",
 
     initialize: function () {
 
@@ -61,7 +61,7 @@ App.Views.LoginAgente = Mn.View.extend({
 App.Views.Open = Mn.View.extend({
     htmlFile: 'views/open.html',
 
-    el: $("#views"),
+    el: "#views",
 
     initialize: function () {
 
@@ -76,13 +76,43 @@ App.Views.Open = Mn.View.extend({
 App.Views.Vista = Mn.View.extend({
     htmlFile: 'views/vista.html',
 
-    el: $("#views"),
+    el: "#views",
 
     initialize: function () {
 
     },
 
     render: function () {
+        this.$el.html(this.html);
+        return this;
+    }
+});
+
+App.Views.vistaTicketCorrecto = Mn.View.extend({
+    htmlFile: 'views/alertas/emailCorrecto.html',
+
+    el: "#alertaVista",
+
+    initialize: function () {
+
+    },
+
+    render: function(){
+        this.$el.html(this.html);
+        return this;
+    }
+});
+
+App.Views.vistaTicketIncorrecto = Mn.View.extend({
+    htmlFile: 'views/alertas/emailIncorrecto.html',
+
+    el: "#alertaVista",
+
+    initialize: function () {
+
+    },
+
+    render: function(){
         this.$el.html(this.html);
         return this;
     }

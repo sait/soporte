@@ -8,8 +8,9 @@ $(document).ready(function(){
 
   $("#formLoginAgente").on("submit",function(e){
     e.preventDefault();
-    console.log("Email:\n",$("#txtEmail").val());
-    console.log("Pass:\n",$("#txtPass").val());
+    /*console.log("Email:\n",$("#txtEmail").val());
+    console.log("Pass:\n",$("#txtPass").val());*/
+
   });
 
   $("#FormOpen").on("submit",function(e){
@@ -26,8 +27,34 @@ $(document).ready(function(){
 
   $("#formView").on("submit",function(e){
     e.preventDefault();
-    console.log("Email:\n",$("#txtEmail").val());
-    console.log("Ticket:\n",$("#txtTicket").val());
+    //console.log("Email:\n",$("#txtEmail").val())
+    //console.log("Ticket:\n",$("#txtTicket").val());
+      $.ajax({
+          url : "http://localhost:5555/api/orders/"+$("#txtTicket").val(),
+          type: "GET",
+          success: function(data, textStatus, jqXHR)
+          {
+              var ticket;
+              if($("#txtEmail").val().toLowerCase() == data.email.toLowerCase())
+              {
+                  ticket = new App.Views.vistaTicketCorrecto();
+                  ticket.render();
+                  console.log("EMAIL CORRECTO");
+              }
+              else
+              {
+                  ticket = new App.Views.vistaTicketIncorrecto();
+                  ticket.render();
+                  console.log("EMAIL NO COINCIDE");
+              }
+          },
+          error: function (jqXHR, textStatus, errorThrown)
+          {
+              ticket = new App.Views.vistaTicketIncorrecto();
+              ticket.render();
+              console.log("No. Ticket no encontrado");
+          }
+      });
   });
 
   $("#formCreate").on("submit",function(e){
