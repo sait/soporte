@@ -2,20 +2,63 @@
 $(document).ready(function(){
   $("#formLogin").on("submit",function(e){
     e.preventDefault();
-    console.log("Email:\n",$("#txtEmail").val());
-    console.log("Pass:\n",$("#txtPass").val());
+    var sesion;
+      $.ajax({
+          url: "http://localhost:5555/login",
+          type: "POST",
+          dataType: "json",
+          data: JSON.stringify({
+              "email":$("#txtEmail").val(),
+              "passwd":$("#txtPass").val()
+          }),
+          success: function (data){
+              console.log("SESION INICIADA");
+              console.log(data);
+              var sesion = new App.Views.sesionCorrecta();
+              sesion.render();
+          },
+          error: function (error) {
+              console.log("CONTRASEÑA O CORREO INCORRECTO");
+              console.log(error);
+              var sesion = new App.Views.sesionIncorrecta();
+              sesion.render();
+          }
+      });
   });
 
   $("#formLoginAgente").on("submit",function(e){
     e.preventDefault();
-    console.log("Email:\n",$("#txtEmail").val());
-    console.log("Pass:\n",$("#txtPass").val());
+      var sesion;
+    $.ajax({
+        url: "http://localhost:5555/login",
+        type: "POST",
+        dataType: "json",
+        data: JSON.stringify({
+            "email":$("#txtEmail").val(),
+            "passwd":$("#txtPass").val()
+        }),
+        success: function (data){
+            console.log("SESION INICIADA");
+            console.log(data);
+            var sesion = new App.Views.sesionCorrecta();
+            sesion.render();
+        },
+        error: function (error) {
+            console.log("CONTRASEÑA O CORREO INCORRECTO");
+            console.log(error);
+            var sesion = new App.Views.sesionIncorrecta();
+            sesion.render();
+        }
+    });
   });
 
   $("#FormOpen").on("submit",function(e){
     e.preventDefault();
+      var respuesta;
     if($("#txtTema")[0].selectedIndex == 0 || $("#txtProducto")[0].selectedIndex == 0 || $("#txtTitulo").val() == "" || $("#txtDetalle").val() == ""){
         console.log("Asegurate de seleccionar tema, producto y no dejar cuadros sin llenar");
+        respuesta = new App.Views.abrirTicketIncorrecto();
+        respuesta.render();
         return;
     }
     var noCont = 0;
@@ -47,14 +90,20 @@ $(document).ready(function(){
             }),
             success: function (data) {
                 console.log("Se registró el ticket con el ID: "+data.data);
+                respuesta = new App.Views.abrirTicketCorrecto();
+                respuesta.render();
             },
             error: function (error) {
                 console.log(error);
+                respuesta = new App.Views.abrirTicketIncorrecto();
+                respuesta.render();
             }
         });
     }
     else{
         console.log("El correo no esta registrado");
+        respuesta = new App.Views.abrirTicketIncorrecto();
+        respuesta.render();
     }
   });
 
@@ -90,8 +139,11 @@ $(document).ready(function(){
 
   $("#formCreate").on("submit",function(e){
     e.preventDefault();
-    if($("#txtNombre").val() == "" || $("#txtEmpresa") == "" || $("#txtEmail").val()== "" || $("#txtTelefono").val() == "" || $("#txtPass1").val() == "" || $("#txtPass2").val() == ""){
+    var registro;
+    if($("#txtNombre").val() == "" || $("#txtEmpresa").val() == "" || $("#txtEmail").val()== "" || $("#txtTelefono").val() == "" || $("#txtPass1").val() == "" || $("#txtPass2").val() == ""){
         console.log("Asegurate de llenar los campos");
+        registro = new App.Views.registroIncorrecto();
+        registro.render();
         return;
     }
     var caEmail;
@@ -104,6 +156,8 @@ $(document).ready(function(){
         },
         error: function (error) {
             console.log(error);
+            registro = new App.Views.registroIncorrecto();
+            registro.render();
         }
     });
     switch (caEmail){
@@ -112,13 +166,19 @@ $(document).ready(function(){
             break;
         case 1:
             console.log("Correo registrado");
+            registro = new App.Views.registroAnterior();
+            registro.render();
             return; break;
         default:
             console.log("Asegurate de escribir tu correo");
+            registro = new App.Views.registroIncorrecto();
+            registro.render();
             return; break;
     }
     if($("#txtPass1").val() != $("#txtPass2").val()){
         console.log("Las contraseñas no coinciden");
+        registro = new App.Views.registroIncorrecto();
+        registro.render();
         return;
     }
     $.ajax({
@@ -135,9 +195,13 @@ $(document).ready(function(){
         }),
         success: function (data) {
             console.log("Registrado con el ID: "+data.data);
+            registro = new App.Views.registroCorrecto();
+            registro.render();
         },
         error: function (error) {
             console.log(error);
+            registro = new App.Views.registroIncorrecto();
+            registro.render();
         }
     });
   });
