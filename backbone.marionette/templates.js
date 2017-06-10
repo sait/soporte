@@ -222,3 +222,153 @@ App.Views.registroIncorrecto = Mn.View.extend({
         return this;
     }
 });
+
+App.Views.SCP = Mn.View.extend({
+    htmlFile: 'views/scp.html',
+
+    el: "#views",
+
+    initialize: function () {
+
+    },
+
+    render: function(){
+        this.$el.html(this.html);
+        return this;
+    }
+});
+
+App.Views.tituloControl = Mn.View.extend({
+    htmlFile: 'views/encabezados/tituloControl.html',
+
+    el: "#encabezadoSCP",
+
+    initialize: function () {
+
+    },
+
+    render: function(){
+        this.$el.html(this.html);
+        return this;
+    }
+});
+
+App.Views.tituloUsuarios = Mn.View.extend({
+    htmlFile: 'views/encabezados/tituloUsuarios.html',
+
+    el: "#encabezadoSCP",
+
+    initialize: function () {
+
+    },
+
+    render: function(){
+        this.$el.html(this.html);
+        return this;
+    }
+});
+
+App.Views.tituloTickets = Mn.View.extend({
+    htmlFile: 'views/encabezados/tituloTickets.html',
+
+    el: "#encabezadoSCP",
+
+    initialize: function () {
+
+    },
+
+    render: function(){
+        this.$el.html(this.html);
+        return this;
+    }
+});
+
+App.Views.titoloReportes = Mn.View.extend({
+    htmlFile: 'views/encabezados/tituloReportes.html',
+
+    el: "#encabezadoSCP",
+
+    initialize: function () {
+
+    },
+
+    render: function(){
+        this.$el.html(this.html);
+        return this;
+    }
+});
+
+App.Views.titoloConcimiento = Mn.View.extend({
+    htmlFile: 'views/encabezados/tituloConocimiento.html',
+
+    el: "#encabezadoSCP",
+
+    initialize: function () {
+
+    },
+
+    render: function(){
+        this.$el.html(this.html);
+        return this;
+    }
+});
+
+App.Views.layoutSCP = Mn.View.extend({
+    htmlFile: 'views/layouts/layoutSCP.html',
+
+    el: "#contenidoSCP",
+
+    initialize: function () {
+
+    },
+
+    render: function(){
+        this.$el.html(this.html);
+        return this;
+    }
+});
+
+App.Views.opcionesControl = Mn.View.extend({
+    htmlFile: 'views/opciones/opcionesControl.html',
+
+    el: "#opcionesSCP",
+
+    initialize: function () {
+
+    },
+
+    render: function(){
+        this.$el.html(this.html);
+        return this;
+    }
+});
+
+App.Views.opcionesTicket = Mn.View.extend({
+    htmlFile: 'views/opciones/opcionesTickets.html',
+
+    el: "#opcionesSCP",
+
+    initialize: function () {
+
+    },
+
+    render: function(){
+        this.$el.html(this.html);
+        return this;
+    }
+});
+
+App.Views.contenidoTicketAbierto = Mn.View.extend({
+    htmlFile: 'views/contenidos/contenidoTicketAbierto.html',
+
+    el: "#vistaSCP",
+
+    initialize: function () {
+
+    },
+
+    render: function(){
+        this.$el.html(this.html);
+        return this;
+    }
+});

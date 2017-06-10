@@ -1,5 +1,7 @@
 
-$(document).ready(function(){
+//$(document).ready(function(){
+
+
   $("#formLogin").on("submit",function(e){
     e.preventDefault();
     var sesion;
@@ -14,13 +16,13 @@ $(document).ready(function(){
           success: function (data){
               console.log("SESION INICIADA");
               console.log(data);
-              var sesion = new App.Views.sesionCorrecta();
+              sesion = new App.Views.sesionCorrecta();
               sesion.render();
           },
           error: function (error) {
               console.log("CONTRASEÑA O CORREO INCORRECTO");
               console.log(error);
-              var sesion = new App.Views.sesionIncorrecta();
+              sesion = new App.Views.sesionIncorrecta();
               sesion.render();
           }
       });
@@ -28,8 +30,9 @@ $(document).ready(function(){
 
   $("#formLoginAgente").on("submit",function(e){
     e.preventDefault();
-      var sesion;
+    var sesion;
     $.ajax({
+        async: false,
         url: "http://localhost:5555/login",
         type: "POST",
         dataType: "json",
@@ -39,17 +42,46 @@ $(document).ready(function(){
         }),
         success: function (data){
             console.log("SESION INICIADA");
-            console.log(data);
-            var sesion = new App.Views.sesionCorrecta();
+            //console.log(data);
+            localStorage.clear();
+            localStorage.setItem("tokenAgente", data.token);
+            localStorage.setItem("userAgente", data.name);
+            sesion = new App.Views.sesionCorrecta();
             sesion.render();
+            $("#nombreUsuario").html(data.name);
+            window.location.hash = "#scp";
         },
         error: function (error) {
             console.log("CONTRASEÑA O CORREO INCORRECTO");
             console.log(error);
-            var sesion = new App.Views.sesionIncorrecta();
+            localStorage.clear();
+            sesion = new App.Views.sesionIncorrecta();
             sesion.render();
         }
     });
+      /*if(localStorage.length > 0) {
+          $.ajaxSetup({
+              contentType: "application/json",
+              beforeSend: function (xhr) {
+                  console.log("TOKEN ESTABLECIDO");
+                  var token = localStorage.getItem("tokenAgente");
+                  token ? xhr.setRequestHeader("X-Token", token) : null;
+                  //console.log(xhr);
+                  //console.log(token);
+              },
+              statusCode: {
+                  200: function () {
+                      console.log("200");
+                  },
+                  401: function () {
+                      console.log("401");
+                  },
+                  403: function () {
+                      console.log("403");
+                  }
+              }
+          });
+      }*/
   });
 
   $("#FormOpen").on("submit",function(e){
@@ -205,4 +237,4 @@ $(document).ready(function(){
         }
     });
   });
-});
+//});
