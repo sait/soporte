@@ -27,3 +27,14 @@ body{
 .botones{
     box-shadow: 0px 0px 10px #bebebe;
 }
+
+
+tr:nth-child(even){
+    background-color: #e6ebff;
+}
+tr:hover{
+    background-color: #dbf9dd;
+}
+thead{
+    background-color: #dadada;
+}

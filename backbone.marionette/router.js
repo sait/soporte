@@ -53,133 +53,162 @@ App.Utils.loadTemplates(App.Views).done(function () {
             }
         },
 
-        control: function(){
-            console.log("Panel de Control");
-            if(localStorage.getItem("tokenAgente") != null){
-                scp.render();
-                $("#liControl").addClass("active");
-                var tituloControl = new App.Views.tituloControl();
-                tituloControl.render();
-                var layoutSCP = new App.Views.layoutSCP();
-                layoutSCP.render();
-                var opcionesControl = new App.Views.opcionesControl();
-                opcionesControl.render();
-            }
-            else{
-                window.location.href = "#loginAgente";
-            }
-        },
-
-        usuarios: function () {
-            console.log("Usuarios");
-            if(localStorage.getItem("tokenAgente") != null){
-                scp.render();
-                $("#liUser").addClass("active");
-                var tituloUsuarios = new App.Views.tituloUsuarios();
-                tituloUsuarios.render();
-            }
-            else{
-                window.location.href = "#loginAgente";
-            }
-        },
-
-        tickets: function () {
-            console.log("Tickets");
-            if(localStorage.getItem("tokenAgente") != null){
-                window.location.href = "#scp/tickets/open"
-            }
-            else {
-                window.location.href = "#loginAgente";
-            }
-        },
-
-            openedTickets: function () {
-                scp.render();
-                $("#liTickets").addClass("active");
-                var tituloTickets = new App.Views.tituloTickets();
-                tituloTickets.render();
-                var layoutSCP = new App.Views.layoutSCP();
-                layoutSCP.render();
-                var opcionesTicket = new App.Views.opcionesTicket();
-                opcionesTicket.render();
-                $("#liTicketAbierto").addClass("active");
-                var contenidoTicketAbierto = new App.Views.contenidoTicketAbierto();
-                contenidoTicketAbierto.render();
+            control: function(){
+                if(localStorage.getItem("tokenAgente") != null){
+                    scp.render();
+                    $("#liControl").addClass("active");
+                    var tituloControl = new App.Views.tituloControl();
+                    tituloControl.render();
+                    var layoutSCP = new App.Views.layoutSCP();
+                    layoutSCP.render();
+                    var opcionesControl = new App.Views.opcionesControl();
+                    opcionesControl.render();
+                }
+                else{
+                    window.location.href = "#loginAgente";
+                }
             },
 
-            answeredTickets: function () {
-                scp.render();
-                $("#liTickets").addClass("active");
-                var tituloTickets = new App.Views.tituloTickets();
-                tituloTickets.render();
-                var layoutSCP = new App.Views.layoutSCP();
-                layoutSCP.render();
-                var opcionesTicket = new App.Views.opcionesTicket();
-                opcionesTicket.render();
-                $("#liTicketRespondido").addClass("active");
+            usuarios: function () {
+                if(localStorage.getItem("tokenAgente") != null){
+                    scp.render();
+                    $("#liUser").addClass("active");
+                    var tituloUsuarios = new App.Views.tituloUsuarios();
+                    tituloUsuarios.render();
+                }
+                else{
+                    window.location.href = "#loginAgente";
+                }
             },
 
-            overdueTickets: function () {
-                scp.render();
-                $("#liTickets").addClass("active");
-                var tituloTickets = new App.Views.tituloTickets();
-                tituloTickets.render();
-                var layoutSCP = new App.Views.layoutSCP();
-                layoutSCP.render();
-                var opcionesTicket = new App.Views.opcionesTicket();
-                opcionesTicket.render();
-                $("#liTicketAtrasado").addClass("active");
+            tickets: function () {
+                if(localStorage.getItem("tokenAgente") != null){
+                    window.location.href = "#scp/tickets/open"
+                }
+                else {
+                    window.location.href = "#loginAgente";
+                }
             },
 
-            closedTickets: function () {
-                scp.render();
-                $("#liTickets").addClass("active");
-                var tituloTickets = new App.Views.tituloTickets();
-                tituloTickets.render();
-                var layoutSCP = new App.Views.layoutSCP();
-                layoutSCP.render();
-                var opcionesTicket = new App.Views.opcionesTicket();
-                opcionesTicket.render();
-                $("#liTicketCerrado").addClass("active");
+                openedTickets: function () {
+                    if(localStorage.getItem("tokenAgente") != null) {
+                        scp.render();
+                        $("#liTickets").addClass("active");
+                        var tituloTickets = new App.Views.tituloTickets();
+                        tituloTickets.render();
+                        var layoutSCP = new App.Views.layoutSCP();
+                        layoutSCP.render();
+                        var opcionesTicket = new App.Views.opcionesTicket();
+                        opcionesTicket.render();
+                        $("#liTicketAbierto").addClass("active");
+                        var contenidoTicketAbierto = new App.Views.contenidoTicketAbierto();
+                        contenidoTicketAbierto.render();
+
+                    }
+                    else{
+                        window.location.href = "#loginAgente";
+                    }
+                },
+
+                answeredTickets: function () {
+                    if(localStorage.getItem("tokenAgente") != null) {
+                        scp.render();
+                        $("#liTickets").addClass("active");
+                        var tituloTickets = new App.Views.tituloTickets();
+                        tituloTickets.render();
+                        var layoutSCP = new App.Views.layoutSCP();
+                        layoutSCP.render();
+                        var opcionesTicket = new App.Views.opcionesTicket();
+                        opcionesTicket.render();
+                        $("#liTicketRespondido").addClass("active");
+                        var contenidoTicketRespondido = new App.Views.contenidoTicketRespondido();
+                        contenidoTicketRespondido.render();
+                    }
+                    else{
+                        window.location.href = "#loginAgente";
+                    }
+                },
+
+                overdueTickets: function () {
+                    if(localStorage.getItem("tokenAgente") != null) {
+                        scp.render();
+                        $("#liTickets").addClass("active");
+                        var tituloTickets = new App.Views.tituloTickets();
+                        tituloTickets.render();
+                        var layoutSCP = new App.Views.layoutSCP();
+                        layoutSCP.render();
+                        var opcionesTicket = new App.Views.opcionesTicket();
+                        opcionesTicket.render();
+                        $("#liTicketAtrasado").addClass("active");
+                        var contenidoTicketAtrasado = new App.Views.contenidoTicketAtrasado();
+                        contenidoTicketAtrasado.render();
+                    }
+                    else{
+                        window.location.href = "#loginAgente";
+                    }
+                },
+
+                closedTickets: function () {
+                    if(localStorage.getItem("tokenAgente") != null) {
+                        scp.render();
+                        $("#liTickets").addClass("active");
+                        var tituloTickets = new App.Views.tituloTickets();
+                        tituloTickets.render();
+                        var layoutSCP = new App.Views.layoutSCP();
+                        layoutSCP.render();
+                        var opcionesTicket = new App.Views.opcionesTicket();
+                        opcionesTicket.render();
+                        $("#liTicketCerrado").addClass("active");
+                        var contenidoTicketCerrado = new App.Views.contenidoTicketCerrado();
+                        contenidoTicketCerrado.render();
+                    }
+                    else{
+                        window.location.href = "#loginAgente";
+                    }
+                },
+
+                newTicket: function () {
+                    if(localStorage.getItem("tokenAgente") != null) {
+                        scp.render();
+                        $("#liTickets").addClass("active");
+                        var tituloTickets = new App.Views.tituloTickets();
+                        tituloTickets.render();
+                        var layoutSCP = new App.Views.layoutSCP();
+                        layoutSCP.render();
+                        var opcionesTicket = new App.Views.opcionesTicket();
+                        opcionesTicket.render();
+                        $("#liTicketNuevo").addClass("active");
+                        var contenidoTicketNuevo = new App.Views.contenidoTicketNuevo();
+                        contenidoTicketNuevo.render();
+                    }
+                    else{
+                        window.location.href = "#loginAgente";
+                    }
+                },
+
+            reportes: function () {
+                if(localStorage.getItem("tokenAgente") != null){
+                    scp.render();
+                    $("#liReportes").addClass("active");
+                    var tituloReportes = new App.Views.titoloReportes();
+                    tituloReportes.render();
+                }
+                else{
+                    window.location.href = "#loginAgente";
+                }
             },
 
-            newTicket: function () {
-                scp.render();
-                $("#liTickets").addClass("active");
-                var tituloTickets = new App.Views.tituloTickets();
-                tituloTickets.render();
-                var layoutSCP = new App.Views.layoutSCP();
-                layoutSCP.render();
-                var opcionesTicket = new App.Views.opcionesTicket();
-                opcionesTicket.render();
-                $("#liTicketNuevo").addClass("active");
-            },
-
-        reportes: function () {
-            console.log("Reportes");
-            if(localStorage.getItem("tokenAgente") != null){
-                scp.render();
-                $("#liReportes").addClass("active");
-                var tituloReportes = new App.Views.titoloReportes();
-                tituloReportes.render();
+            conocimiento: function () {
+                if(localStorage.getItem("tokenAgente") != null){
+                    scp.render();
+                    $("#liBase").addClass("active");
+                    var tituloConocimiento = new App.Views.titoloConcimiento();
+                    tituloConocimiento.render();
+                }
+                else{
+                    window.location.href = "#loginAgente";
+                }
             }
-            else{
-                window.location.href = "#loginAgente";
-            }
-        },
-
-        conocimiento: function () {
-            console.log("Conocimiento");
-            if(localStorage.getItem("tokenAgente") != null){
-                scp.render();
-                $("#liBase").addClass("active");
-                var tituloConocimiento = new App.Views.titoloConcimiento();
-                tituloConocimiento.render();
-            }
-            else{
-                window.location.href = "#loginAgente";
-            }
-        }
     };
 
     var SupportRouter = Mn.AppRouter.extend({

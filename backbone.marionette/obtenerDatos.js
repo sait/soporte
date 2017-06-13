@@ -1,5 +1,5 @@
 
-//$(document).ready(function(){
+$(document).ready(function(){
 
 
   $("#formLogin").on("submit",function(e){
@@ -32,7 +32,6 @@
     e.preventDefault();
     var sesion;
     $.ajax({
-        async: false,
         url: "http://localhost:5555/login",
         type: "POST",
         dataType: "json",
@@ -42,7 +41,6 @@
         }),
         success: function (data){
             console.log("SESION INICIADA");
-            //console.log(data);
             localStorage.clear();
             localStorage.setItem("tokenAgente", data.token);
             localStorage.setItem("userAgente", data.name);
@@ -53,35 +51,11 @@
         },
         error: function (error) {
             console.log("CONTRASEÑA O CORREO INCORRECTO");
-            console.log(error);
             localStorage.clear();
             sesion = new App.Views.sesionIncorrecta();
             sesion.render();
         }
     });
-      /*if(localStorage.length > 0) {
-          $.ajaxSetup({
-              contentType: "application/json",
-              beforeSend: function (xhr) {
-                  console.log("TOKEN ESTABLECIDO");
-                  var token = localStorage.getItem("tokenAgente");
-                  token ? xhr.setRequestHeader("X-Token", token) : null;
-                  //console.log(xhr);
-                  //console.log(token);
-              },
-              statusCode: {
-                  200: function () {
-                      console.log("200");
-                  },
-                  401: function () {
-                      console.log("401");
-                  },
-                  403: function () {
-                      console.log("403");
-                  }
-              }
-          });
-      }*/
   });
 
   $("#FormOpen").on("submit",function(e){
@@ -147,7 +121,7 @@
           type: "GET",
           success: function(data, textStatus, jqXHR)
           {
-              if($("#txtEmail").val().toLowerCase() == data.email.toLowerCase())
+              if($("#txtEmail").val() == data.email)
               {
                   ticket = new App.Views.vistaTicketCorrecto();
                   ticket.render();
@@ -158,6 +132,7 @@
                   ticket = new App.Views.vistaTicketIncorrecto();
                   ticket.render();
                   console.log("EMAIL NO COINCIDE");
+                  console.log(data);
               }
           },
           error: function (jqXHR, textStatus, errorThrown)
@@ -237,4 +212,4 @@
         }
     });
   });
-//});
+});

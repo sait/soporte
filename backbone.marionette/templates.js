@@ -372,3 +372,63 @@ App.Views.contenidoTicketAbierto = Mn.View.extend({
         return this;
     }
 });
+
+App.Views.contenidoTicketRespondido = Mn.View.extend({
+    htmlFile: 'views/contenidos/contenidoTicketRespondido.html',
+
+    el: "#vistaSCP",
+
+    initialize: function () {
+
+    },
+
+    render: function(){
+        this.$el.html(this.html);
+        return this;
+    }
+});
+
+App.Views.contenidoTicketAtrasado = Mn.View.extend({
+    htmlFile: 'views/contenidos/contenidoTicketAtrasado.html',
+
+    el: "#vistaSCP",
+
+    initialize: function () {
+
+    },
+
+    render: function(){
+        this.$el.html(this.html);
+        return this;
+    }
+});
+
+App.Views.contenidoTicketCerrado = Mn.View.extend({
+    htmlFile: 'views/contenidos/contenidoTicketCerrado.html',
+
+    el: "#vistaSCP",
+
+    initialize: function () {
+
+    },
+
+    render: function(){
+        this.$el.html(this.html);
+        return this;
+    }
+});
+
+App.Views.contenidoTicketNuevo = Mn.View.extend({
+    htmlFile: 'views/contenidos/contenidoTicketNuevo.html',
+
+    el: "#vistaSCP",
+
+    initialize: function () {
+
+    },
+
+    render: function(){
+        this.$el.html(this.html);
+        return this;
+    }
+});
