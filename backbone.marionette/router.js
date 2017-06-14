@@ -4,6 +4,9 @@
 
 App.Utils.loadTemplates(App.Views).done(function () {
 
+    var views = $("#vistaSCP");
+
+
     var index = new App.Views.Index();
     var login = new App.Views.Login();
     var create = new App.Views.Create();
@@ -222,16 +225,22 @@ App.Utils.loadTemplates(App.Views).done(function () {
             "loginAgente":"loginAgente",
             "vista":"vista",
             "scp": "scp",
-            "scp/control": "control",
-            "scp/users": "usuarios",
-            "scp/tickets": "tickets",
-                "scp/tickets/open": "openedTickets",
-                "scp/tickets/answered": "answeredTickets",
-                "scp/tickets/overdue": "overdueTickets",
-                "scp/tickets/closed": "closedTickets",
-                "scp/tickets/new": "newTicket",
-            "scp/reports": "reportes",
-            "scp/knowledge": "conocimiento"
+                "scp/control": "control",
+                "scp/users": "usuarios",
+                "scp/tickets": "tickets",
+                    "scp/tickets/open": "openedTickets",
+                    "scp/tickets/answered": "answeredTickets",
+                    "scp/tickets/overdue": "overdueTickets",
+                    "scp/tickets/closed": "closedTickets",
+                    "scp/tickets/new": "newTicket",
+                "scp/reports": "reportes",
+                "scp/knowledge": "conocimiento"
+        },
+
+        onRoute: function(name, path, args){
+            /*console.log(name);
+            console.log(path);
+            console.log(args);*/
         }
     });
 

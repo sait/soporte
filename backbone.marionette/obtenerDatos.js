@@ -91,8 +91,8 @@ $(document).ready(function(){
                 "obs": $("#txtTitulo").val(),
                 "duracion": 15,
                 "mensaje": $("#txtDetalle").val(),
-                "idclas": $("#txtTema").val(),
-                "idprod": $("#txtProducto").val()
+                "idclas": $("#txtTema")[0].selectedIndex,
+                "idprod": $("#txtProducto")[0].selectedIndex
             }),
             success: function (data) {
                 console.log("Se registró el ticket con el ID: "+data.data);
@@ -155,7 +155,6 @@ $(document).ready(function(){
     }
     var caEmail;
     $.ajax({
-        async: false,
         url: "http://localhost:5555/api/contacts?search="+$("#txtEmail").val(),
         type: "GET",
         success: function (data) {

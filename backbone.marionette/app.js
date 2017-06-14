@@ -2,6 +2,7 @@
 $(document).ready(function () {
 
     $.ajaxSetup({
+            async: true,
             contentType: "application/json",
             beforeSend: function (xhr) {
                 if(localStorage.getItem("tokenAgente") != null){
@@ -12,7 +13,6 @@ $(document).ready(function () {
                 else{
                     console.log("SIN SESION");
                 }
-
                 if(localStorage.getItem("userAgente") != null){
                     $("#nombreUsuario").html(localStorage.getItem("userAgente"));
                 }
@@ -23,9 +23,13 @@ $(document).ready(function () {
             statusCode: {
                 401: function () {
                     console.log("401");
+                    console.log("Inicio de sesion incorrecta");
                 },
                 403: function () {
                     console.log("Autenticación Requerida");
+                    $("#nombreUsuario").html("Usuario Invitado");
+                    localStorage.clear();
+                    window.location.href = "#loginAgente";
                 }
             }
     });

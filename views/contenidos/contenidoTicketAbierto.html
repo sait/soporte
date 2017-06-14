@@ -1,51 +1,57 @@
 
+<script src="backbone.marionette/bootstrap-table.min.js"></script>
+<script src="backbone.marionette/bootstrap-table-es-MX.js"></script>
+<script>
+    var $table = $("#tablaTicketsAbiertos");
+    var busqueda;
+    function ticketsAbiertosAjax(params){
+        console.log(params.data);
+        busqueda = "http://localhost:5555/api/orders?estado=abierto&limit="+params.data.limit+"&offset="+params.data.offset+"&orderBy="+params.data.sort+"&orden="+params.data.order;
+        if(params.data.search != undefined && params.data.search != ""){
+            busqueda += "&search="+params.data.search;
+        }
+        $.ajax({
+            url: busqueda,
+            type: "GET",
+            success: function (data) {
+                params.success({
+                    total: data.total,
+                    rows: data.rows
+                });
+            },
+            error: function(error){
+                console.log(error);
+            }
+        });
+    }
 
-    <h1>Tickets Abiertos</h1>
+    $("#tablaTicketsAbiertos").on("click-row.bs.table", function(row, $element, field){
+        console.log($element);
+    });
+</script>
+    <!--h1>Tickets Abiertos</h1-->
     <div class="table-responsive">
-        <table class="table table-condensed table-bordered" id="tablaTicketsAbiertos">
+        <table id="tablaTicketsAbiertos"
+               data-toggle="table"
+               data-ajax="ticketsAbiertosAjax"
+               data-show-refresh="true"
+               data-show-toggle="true"
+               data-show-columns="true"
+               data-sort-name="fecha"
+               data-sort-order="desc"
+               data-search="true"
+               data-search-on-enter-key="true"
+               data-side-pagination="server"
+               data-pagination="true">
             <thead>
                 <tr>
-                    <th>#Ticket</th>
-                    <th>Fecha</th>
-                    <th>Asunto</th>
-                    <th>Cliente</th>
-                    <th>Prioridad</th>
-                    <th>Tema de Ayuda</th>
+                    <th data-field="idord" data-sortable="true">#Ticket</th>
+                    <th data-field="fecha" data-sortable="true">Fecha</th>
+                    <th data-field="obs" data-sortable="true">Asunto</th>
+                    <th data-field="Nombre" data-sortable="true">Cliente</th>
+                    <th data-field="prioridad" data-sortable="true">Prioridad</th>
+                    <th data-field="tema" data-sortable="true">Tema de Ayuda</th>
                 </tr>
             </thead>
-            <tbody>
-                <tr>
-                    <td>1</td>
-                    <td>Anna</td>
-                    <td>Pitt</td>
-                    <td>35</td>
-                    <td>New York</td>
-                    <td>USA</td>
-                </tr>
-                <tr>
-                    <td>2</td>
-                    <td>Sergio</td>
-                    <td>Contreras</td>
-                    <td>22</td>
-                    <td>Mexicali</td>
-                    <td>Mexico</td>
-                </tr>
-                <tr>
-                    <td>3</td>
-                    <td>Carlos</td>
-                    <td>Calderon</td>
-                    <td>22</td>
-                    <td>San Luiz</td>
-                    <td>USA</td>
-                </tr>
-                <tr>
-                    <td>4</td>
-                    <td>Yesenia</td>
-                    <td>Medina</td>
-                    <td>20</td>
-                    <td>San LUis</td>
-                    <td>Mexico</td>
-                </tr>
-            </tbody>
         </table>
     </div>

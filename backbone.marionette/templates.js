@@ -358,10 +358,22 @@ App.Views.opcionesTicket = Mn.View.extend({
     }
 });
 
-App.Views.contenidoTicketAbierto = Mn.View.extend({
+App.Views.contenidoTicketAbierto = Marionette.ItemView.extend({
     htmlFile: 'views/contenidos/contenidoTicketAbierto.html',
 
     el: "#vistaSCP",
+
+    regions:{
+        Header: '#views',
+        Section: '#provando'
+    },
+
+    onShow: function(){
+        this.showChildView('Header', new Header());
+        this.showChildView('Section', new Section());
+    },
+
+    template: this,
 
     initialize: function () {
 
